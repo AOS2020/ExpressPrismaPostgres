@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1,
+    "table": "Users",
+    "action": "Criar",
+    "permission": "Criar usuário",
+    "obs": "",
+    "rota": "user/create",
+    "label": "Criar usuario"
+  },
+  {
+    "id": 2,
+    "table": "Users",
+    "action": "Editar",
+    "permission": "Editar usuário",
+    "obs": "",
+    "rota": "user/edit",
+    "label": "Editar usuário"
+  },
+  {
+    "id": 3,
+    "table": "Users",
+    "action": "Excluir",
+    "permission": "Excluir usuário",
+    "obs": "",
+
+    "rota": "user/delete",
+    "label": "Excluir usuário"
+  },
+  {
+    "id": 4,
+    "table": "Users",
+    "action": "Listar",
+    "permission": "Obter dados do usuário",
+    "obs": "",
+    "rota": "user/index",
+    "label": "Obter dados de determinado usuario"
+  },
+  {
+    "id": 5,
+    "table": "Users",
+    "action": "Listar",
+    "permission": "Obter dados de todos os usuários",
+    "obs": "admin controller",
+    "rota": "user/indexall",
+    "label": "Obter dados de todos os usuários"
+  },
+  {
+    "id": 6,
+    "table": "Cam",
+    "action": "Criar",
+    "permission": "Criar camera",
+    "obs": "",
+    "rota": "cam/create",
+    "label": "Criar camera"
+  },
+  {
+    "id": 7,
+    "table": "Cam",
+    "action": "Editar",
+    "permission": "Editar camera",
+    "obs": "",
+    "rota": "cam/edit",
+    "label": "Editar camera de determinado usuário"
+  },
+  {
+    "id": 8,
+    "table": "Cam",
+    "action": "Excluir",
+    "permission": "Excluir camera",
+    "obs": "",
+    "rota": "cam/delete",
+    "label": "Excluir camera de determinado usuário"
+  },
+  {
+    "id": 9,
+    "table": "Cam",
+    "action": "Listar",
+    "permission": "Obter dados das cameras do usuário",
+    "obs": "",
+    "rota": "cam/index",
+    "label": "Obter dados da camera de determinado usuario"
+  },
+  {
+    "id": 10,
+    "table": "Cam",
+    "action": "Listar",
+    "permission": "Obter dados das cameras de todos os usuários",
+    "obs": "admin controller",
+    "rota": "cam/indexall",
+    "label": "Obter dados das cameras de todos os usuários"
+  },
+ 
+  {
+    "id": 11,
+    "table": "Alert",
+    "action": "Criar",
+    "permission": "Criar Alerta",
+    "obs": "",
+    "rota": "alert/create",
+    "label": "Criar Alerta"
+  },
+  {
+    "id": 12,
+    "table": "Alert",
+    "action": "Editar",
+    "permission": "Editar Alerta",
+    "obs": "",
+    "rota": "alert/edit",
+    "label": "Editar Alerta de determinado usuário"
+  },
+  {
+    "id": 13,
+    "table": "Alert",
+    "action": "Excluir",
+    "permission": "Excluir alerta",
+    "obs": "",
+    "rota": "alert/delete",
+    "label": "Excluir alerta de determinado usuário"
+  },
+  {
+    "id": 14,
+    "table": "Alert",
+    "action": "Listar",
+    "permission": "Obter dados dos alerta do usuário",
+    "obs": "",
+    "rota": "alert/index",
+    "label": "Obter dados dos alertas de determinado usuario"
+  },
+  {
+    "id": 15,
+    "table": "Alert",
+    "action": "Listar",
+    "permission": "Obter dados dos alertas de todos os usuários",
+    "obs": "admin controller",
+    "rota": "alert/indexall",
+    "label": "Obter dados dos alertas de todos os usuários"
+  }
+  , {
+    "id": 16,
+    "table": "PlateCapture",
+    "action": "Criar",
+    "permission": "Cria dados da captura de movimento das cameras do usuário",
+    "obs": "",
+    "rota": "platecapture/create",
+    "label": "Obter dados dos alertas de determinado usuario"
+  },
+  {
+    "id": 17,
+    "table": "PlateCapture",
+    "action": "Listar",
+    "permission": "Obter dados da captura de movimento das cameras  do usuário",
+    "obs": "",
+    "rota": "platecapture/index",
+    "label": "Obter dados dos alertas de determinado usuario"
+  },
+  {
+    "id": 18,
+    "table": "PlateCapture",
+    "action": "Listar",
+    "permission": "Obter dados das capturas de movimento das cameras  de todos os usuários",
+    "obs": "admin controller",
+    "rota": "platecapture/indexall",
+    "label": "Obter dados das capturas de movimento das cameras  de todos os usuários"
+  },
+  {
+    "id": 19,
+    "table": "Users",
+    "action": "Atualizar",
+    "permission": "Atualiza token de acesso do usuário",
+    "obs": "",
+    "rota": "user/resettoken",
+    "label": "Atualiza token de acesso do usuaário"
+  }
+]

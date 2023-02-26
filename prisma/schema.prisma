@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+    previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id           Int            @id @default(autoincrement())
+  name         String
+  password     String
+  address      String?
+  neighborhood String?
+  county       String?
+  state        String?
+  location     String?
+  group        Group          @relation(fields: [groupId], references: [id])
+  groupId      Int
+  store        Boolean?
+  type_store   String?
+  email        String         @unique
+  phone        String?
+  active       Boolean        @default(true)
+  token        String  @default(uuid())
+  active_token Boolean        @default(true)
+  cam          Cam[]
+  platecapture PlateCapture[]
+  alert        Alert[]
+
+  @@map("users")
+}
+
+model Cam {
+  id           Int            @id @default(autoincrement())
+  name         String
+  location     String?
+  url          String
+  active       Boolean        @default(true)
+  user         Users          @relation(fields: [userId], references: [id])
+  way          String
+  userId       Int
+  platecapture PlateCapture[]
+
+  @@map("cam")
+}
+
+model PlateCapture {
+
+  id        Int      @id @default(autoincrement())
+  image     String
+  plate     String
+  user      Users    @relation(fields: [userId], references: [id])
+  cam       Cam      @relation(fields: [camId], references: [id])
+  userId    Int
+  camId     Int
+  date_time DateTime
+  seein     SeenIn[]
+
+  @@map("platecapture")
+}
+
+model Alert {
+
+  id            Int      @id @default(autoincrement())
+  description   String
+  emails        String
+  plate         String
+  vehicle_type  String?
+  vehicle_color String?
+  vehicle_model String?
+  vehicle_make  String?
+  date_time     DateTime @default(now())
+  user          Users    @relation(fields: [userId], references: [id])
+  userId        Int
+  active        Boolean  @default(true)
+
+
+  @@map("alert")
+}
+
+model SeenIn {
+  id             Int          @id @default(autoincrement())
+  platecapture   PlateCapture @relation(fields: [platecaptureId], references: [id])
+  platecaptureId Int
+
+  @@map("seenin")
+}
+
+model Group {
+  id              Int               @id @default(autoincrement())
+  description     String
+  superior        Int
+  permissionGroup PermissionGroup[]
+  users           Users[]
+
+  @@map("group")
+}
+
+model Permission {
+  id              Int               @id @default(autoincrement())
+  table           String
+  action          String
+  permission      String
+  obs             String
+  rota            String
+  label           String
+  permissionGroup PermissionGroup[]
+
+  @@map("permission")
+}
+
+model PermissionGroup {
+  id           Int        @id @default(autoincrement())
+  permission   Permission @relation(fields: [permissionId], references: [id])
+  permissionId Int
+  group        Group      @relation(fields: [groupId], references: [id])
+  groupId      Int
+
+  @@map("permissiongroup")
+}
+
+
